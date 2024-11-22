@@ -306,28 +306,28 @@ with gr.Blocks(css=css) as demo:
             outputs=[result_video],
         )
 
-        gr.Examples(
-            examples=[
-                ["examples/gen3/case1.mp4", "", "", 1.0, 0.2, "DDIM", 25, 7.5, 33817921],
-                ["examples/gen3/case3.mp4", "", "", 1.0, 0.2, "DDIM", 25, 7.5, 94667578],
-                ["examples/gen3/case5.mp4", "", "", 0.75, 0.2, "DDIM", 25, 7.5, 92890876],
-                ["examples/gen3/case6.mp4", "", "", 1.0, 0.2, "DDIM", 25, 7.5, 77015909],
-            ],
-            inputs=[
-                init_img,
-                prompt_textbox,
-                negative_prompt_textbox,
-                ip_adapter_scale,
-                temporal_scale,
-                sampler_dropdown,
-                sample_step_slider,
-                cfg_scale_slider,
-                seed_textbox,
-            ],
-            cache_examples=True,
-            outputs=[result_video],
-            fn=controller.foley,
-        )
+        # gr.Examples(
+        #     examples=[
+        #         ["examples/gen3/case1.mp4", "", "", 1.0, 0.2, "DDIM", 25, 7.5, 33817921],
+        #         ["examples/gen3/case3.mp4", "", "", 1.0, 0.2, "DDIM", 25, 7.5, 94667578],
+        #         ["examples/gen3/case5.mp4", "", "", 0.75, 0.2, "DDIM", 25, 7.5, 92890876],
+        #         ["examples/gen3/case6.mp4", "", "", 1.0, 0.2, "DDIM", 25, 7.5, 77015909],
+        #     ],
+        #     inputs=[
+        #         init_img,
+        #         prompt_textbox,
+        #         negative_prompt_textbox,
+        #         ip_adapter_scale,
+        #         temporal_scale,
+        #         sampler_dropdown,
+        #         sample_step_slider,
+        #         cfg_scale_slider,
+        #         seed_textbox,
+        #     ],
+        #     cache_examples=True,
+        #     outputs=[result_video],
+        #     fn=controller.foley,
+        # )
 
     demo.queue(10)
     demo.launch(
